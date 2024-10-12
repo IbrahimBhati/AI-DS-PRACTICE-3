@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professor Rizwan Haider</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8ff; /* Light blue background */
+            color: #333;
+            overflow-x: hidden;
+        }
+        header {
+            background-color: #005f99; /* Dark Blue */
+            color: #fff;
+            padding: 2rem;
+            text-align: center;
+            animation: slideDown 1.5s ease-out;
+            position: relative;
+            overflow: hidden;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 3rem;
+            animation: bounce 2s ease infinite alternate, shadowPulse 1s ease infinite;
+        }
+        header p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+            animation: fadeIn 2s ease-in-out 1s forwards;
+        }
+        header::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 5px;
+            background-color: #e6f2ff;
+            bottom: 0;
+            left: 0;
+            animation: borderWidth 2s ease infinite alternate;
+        }
+
+        section {
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .intro {
+            background-color: #cce7ff; /* Very Light Blue */
+            padding: 2rem;
+            margin: 2rem auto;
+            max-width: 800px;
+            border-radius: 8px;
+            animation: zoomIn 2s ease-in-out;
+            box-shadow: 0 0 20px rgba(0, 95, 153, 0.3);
+        }
+        .intro h2 {
+            color: #005f99;
+            font-size: 2.5rem;
+            animation: colorChange 3s ease infinite alternate;
+            letter-spacing: 3px;
+        }
+        .intro p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: #333;
+            animation: slideLeft 2s ease-out;
+        }
+
+        .skills {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 3rem;
+            opacity: 0;
+            animation: fadeUp 2s ease forwards;
+            animation-delay: 1s;
+        }
+        .skill-box {
+            background-color: #e6f2ff; /* Lighter Blue */
+            padding: 2rem;
+            width: 30%;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: rotateIn 1.5s ease forwards, float 4s ease-in-out infinite;
+            animation-delay: 0.5s;
+        }
+        .skill-box h3 {
+            font-size: 1.8rem;
+            color: #003f6b; /* Darker Blue */
+            margin-bottom: 1rem;
+        }
+        .skill-box p {
+            font-size: 1rem;
+            color: #333;
+        }
+        .skill-box:hover {
+            transform: translateY(-10px) rotate(2deg) scale(1.1);
+            box-shadow: 0 0 20px rgba(0, 95, 153, 0.5);
+            animation: hoverSpin 1s ease infinite;
+        }
+
+        footer {
+            background-color: #005f99; /* Dark Blue */
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 4rem;
+            animation: slideUp 1.5s ease-out;
+        }
+        footer p {
+            margin: 0;
+            animation: slideRight 2s ease-out;
+        }
+
+        @media (max-width: 768px) {
+            .skills {
+                flex-direction: column;
+                align-items: center;
+            }
+            .skill-box {
+                width: 80%;
+                margin-bottom: 2rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes hoverSpin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes colorChange {
+            0% {
+                color: #005f99;
+            }
+            100% {
+                color: #ff9933; /* Alternate Color */
+            }
+        }
+
+        @keyframes borderWidth {
+            from {
+                width: 0%;
+            }
+            to {
+                width: 100%;
+            }
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        @keyframes shadowPulse {
+            0% {
+                box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            }
+            50% {
+                box-shadow: 0 0 30px rgba(255, 255, 255, 1);
+            }
+            100% {
+                box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            }
+        }
+
+        @keyframes rotateIn {
+            from {
+                transform: rotate(-180deg);
+                opacity: 0;
+            }
+            to {
+                transform: rotate(0deg);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideLeft {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideRight {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Professor Rizwan Haider</h1>
+    <p>Mathematics Department - Expert in Algebra, Geometry & Calculus</p>
+</header>
+
+<section class="intro">
+    <h2>Welcome to the World of Mathematics!</h2>
+    <p>
+        Professor Rizwan Haider has dedicated over 20 years to exploring the beauty of mathematical principles.
+        With a passion for teaching and a deep understanding of topics like Algebra, Calculus, and Geometry, 
+        he helps students unlock their potential in mathematics.
+    </p>
+</section>
+
+<section class="skills">
+    <div class="skill-box">
+        <h3>Algebra</h3>
+        <p>Specializes in teaching fundamental and advanced algebra, including linear equations, polynomials, and functions.</p>
+    </div>
+    <div class="skill-box">
+        <h3>Geometry</h3>
+        <p>Offers insights into Euclidean and Non-Euclidean geometry, helping students visualize shapes and spaces.</p>
+    </div>
+    <div class="skill-box">
+        <h3>Calculus</h3>
+        <p>Guides students through the complexities of differential and integral calculus with an intuitive approach.</p>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2024 Professor Rizwan Haider | All Rights Reserved</p>
+</footer>
+
+</body>
+</html>

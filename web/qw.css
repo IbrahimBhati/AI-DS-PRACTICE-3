@@ -1,0 +1,23 @@
+#content-container {
+    width: 60%;
+    margin: 0 auto;
+    padding: 4vmin;
+    background-color: #ff004c1e;
+    border-radius: 29px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.747);
+}
+
+h1 {
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    color: #333;
+}
+
+a {
+    color: rgba(184, 10, 10, 0.699);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
